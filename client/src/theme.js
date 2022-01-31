@@ -41,6 +41,7 @@ let theme = createTheme({
     grey: {
       lev1: 'rgba(51, 51, 51, 0.07)',
       lev3: 'rgba(51, 51, 51, 0.25)',
+      lev4: 'rgba(51, 51, 51, 0.5)',
     },
     background: {
       default: '#F8F8F8',
