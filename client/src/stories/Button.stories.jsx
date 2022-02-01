@@ -4,7 +4,6 @@ import { Button } from '../ui';
 import { Grid, Typography } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-//import { theme } from 'theme';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -20,6 +19,11 @@ export default {
       },
       options: ['contained', 'outlined'],
     },
+    label: {
+      control: {
+        type: '' | 'node'
+      },
+    },
     color: {
       control: {
         type: 'radio',
@@ -29,6 +33,12 @@ export default {
     disabled: {
       control: {
         default: false,
+        type: 'boolean',
+      },
+    },
+    disableRipple: {
+      control: {
+        default: true,
         type: 'boolean',
       },
     },
@@ -47,6 +57,12 @@ export default {
 
 //TEMPLATE
 const Template = ({ label, ...args }) => <Button {...args}>{label}</Button>;
+
+const btnClickHandler = (e) => {
+  e.preventDefault();
+  console.log(e.target, 'button clicked')
+}
+
 const All = () => (
   <>
     <Grid container>
@@ -56,16 +72,16 @@ const All = () => (
     </Grid>
 
     <Grid sx={{mb: 2}}>
-      <Button sx={{mr: 2}}  variant={'contained'} color={'primary'}>
+      <Button sx={{mr: 2}} onClick={btnClickHandler} variant={'contained'} color={'primary'} disableRipple>
         Button
       </Button>
-      <Button sx={{mr: 2}}  variant={'contained'} color={'primary'} startIcon={<AddIcon/>}>
+      <Button sx={{mr: 2}}  variant={'contained'} color={'primary'} startIcon={<AddIcon/>} disableRipple>
         Button
       </Button>
-      <Button sx={{mr: 2}}  variant={'contained'} color={'primary'} endIcon={<ArrowForwardIosIcon/>}>
+      <Button sx={{mr: 2}}  variant={'contained'} color={'primary'} endIcon={<ArrowForwardIosIcon/>} disableRipple>
         Button
       </Button>
-      <Button sx={{mr: 2}}  variant={'contained'} color={'primary'} >{<ArrowForwardIosIcon/>}</Button>
+      <Button sx={{mr: 2}}  variant={'contained'} color={'primary'} disableRipple>{<ArrowForwardIosIcon/>}</Button>
     </Grid>
 
     <Grid sx={{mb: 2}}>
@@ -82,16 +98,16 @@ const All = () => (
     </Grid>
 
     <Grid sx={{mb: 2}}>
-      <Button sx={{mr: 2}} variant={'contained'} color={'error'}>
+      <Button sx={{mr: 2}} variant={'contained'} color={'error'} disableRipple>
         Button
       </Button>
-      <Button sx={{mr: 2}}  variant={'contained'} color={'error'} startIcon={<AddIcon/>}>
+      <Button sx={{mr: 2}}  variant={'contained'} color={'error'} startIcon={<AddIcon/>} disableRipple>
         Button
       </Button>
-      <Button sx={{mr: 2}}  variant={'contained'} color={'error'} endIcon={<ArrowForwardIosIcon/>}>
+      <Button sx={{mr: 2}}  variant={'contained'} color={'error'} endIcon={<ArrowForwardIosIcon/>} disableRipple>
         Button
       </Button>
-      <Button sx={{mr: 2}}  variant={'contained'} color={'error'} >{<ArrowForwardIosIcon/>}</Button>
+      <Button sx={{mr: 2}}  variant={'contained'} color={'error'} disableRipple>{<ArrowForwardIosIcon/>}</Button>
     </Grid>
 
     <Grid sx={{mb: 2}}>
@@ -108,16 +124,16 @@ const All = () => (
     </Grid>
 
     <Grid sx={{mb: 2}}>
-      <Button sx={{mr: 2}} variant={'contained'} color={'success'}>
+      <Button sx={{mr: 2}} variant={'contained'} color={'success'}disableRipple>
         Button
       </Button>
-      <Button sx={{mr: 2}}  variant={'contained'} color={'success'} startIcon={<AddIcon/>}>
+      <Button sx={{mr: 2}}  variant={'contained'} color={'success'} startIcon={<AddIcon/>}disableRipple>
         Button
       </Button>
-      <Button sx={{mr: 2}}  variant={'contained'} color={'success'} endIcon={<ArrowForwardIosIcon/>}>
+      <Button sx={{mr: 2}}  variant={'contained'} color={'success'} endIcon={<ArrowForwardIosIcon/>} disableRipple>
         Button
       </Button>
-      <Button sx={{mr: 2}}  variant={'contained'} color={'success'} >{<ArrowForwardIosIcon/>}</Button>
+      <Button sx={{mr: 2}}  variant={'contained'} color={'success'} disableRipple>{<ArrowForwardIosIcon/>}</Button>
     </Grid>
 
     <Grid sx={{mb: 2}}>
@@ -134,16 +150,16 @@ const All = () => (
     </Grid>
 
     <Grid sx={{mb: 2}}>
-      <Button sx={{mr: 2}} variant={'contained'} color={'warning'} >
+      <Button sx={{mr: 2}} variant={'contained'} color={'warning'} disableRipple>
         Button
       </Button>
-      <Button sx={{mr: 2}}  variant={'contained'} color={'warning'} startIcon={<AddIcon/>}>
+      <Button sx={{mr: 2}}  variant={'contained'} color={'warning'} startIcon={<AddIcon/>} disableRipple>
         Button
       </Button>
-      <Button sx={{mr: 2}}  variant={'contained'} color={'warning'} endIcon={<ArrowForwardIosIcon/>}>
+      <Button sx={{mr: 2}}  variant={'contained'} color={'warning'} endIcon={<ArrowForwardIosIcon/>} disableRipple>
         Button
       </Button>
-      <Button sx={{mr: 2}}  variant={'contained'} color={'warning'} >{<ArrowForwardIosIcon/>}</Button>
+      <Button sx={{mr: 2}}  variant={'contained'} color={'warning'} disableRipple>{<ArrowForwardIosIcon/>}</Button>
     </Grid>
 
     <Grid sx={{mb: 2}}>
@@ -165,16 +181,16 @@ const All = () => (
       </Grid>
     </Grid>
     <Grid sx={{mb: 2}}>
-      <Button sx={{mr: 2}}  variant={'outlined'} color={'primary'}>
+      <Button sx={{mr: 2}}  variant={'outlined'} color={'primary'}disableRipple>
         Button
       </Button>
-      <Button sx={{mr: 2}}  variant={'outlined'} color={'primary'} startIcon={<AddIcon/>}>
+      <Button sx={{mr: 2}}  variant={'outlined'} color={'primary'} startIcon={<AddIcon/>}disableRipple>
         Button
       </Button>
-      <Button sx={{mr: 2}}  variant={'outlined'} color={'primary'} endIcon={<ArrowForwardIosIcon/>}>
+      <Button sx={{mr: 2}}  variant={'outlined'} color={'primary'} endIcon={<ArrowForwardIosIcon/>}disableRipple>
         Button
       </Button>
-      <Button sx={{mr: 2}}  variant={'outlined'} color={'primary'} >{<ArrowForwardIosIcon/>}</Button>
+      <Button sx={{mr: 2}}  variant={'outlined'} color={'primary'}disableRipple>{<ArrowForwardIosIcon/>}</Button>
     </Grid>
 
     <Grid sx={{mb: 2}}>
@@ -191,16 +207,16 @@ const All = () => (
     </Grid>
 
     <Grid sx={{mb: 2}}>
-      <Button sx={{mr: 2}} variant={'outlined'} color={'error'}>
+      <Button sx={{mr: 2}} variant={'outlined'} color={'error'} disableRipple>
         Button
       </Button>
-      <Button sx={{mr: 2}}  variant={'outlined'} color={'error'} startIcon={<AddIcon/>}>
+      <Button sx={{mr: 2}}  variant={'outlined'} color={'error'} startIcon={<AddIcon/>} disableRipple>
         Button
       </Button>
-      <Button sx={{mr: 2}}  variant={'outlined'} color={'error'} endIcon={<ArrowForwardIosIcon/>}>
+      <Button sx={{mr: 2}}  variant={'outlined'} color={'error'} endIcon={<ArrowForwardIosIcon/>} disableRipple>
         Button
       </Button>
-      <Button sx={{mr: 2}}  variant={'outlined'} color={'error'} >{<ArrowForwardIosIcon/>}</Button>
+      <Button sx={{mr: 2}}  variant={'outlined'} color={'error'} disableRipple>{<ArrowForwardIosIcon/>}</Button>
     </Grid>
 
     <Grid sx={{mb: 2}}>
@@ -217,16 +233,16 @@ const All = () => (
     </Grid>
 
     <Grid sx={{mb: 2}}>
-      <Button sx={{mr: 2}} variant={'outlined'} color={'success'}>
+      <Button sx={{mr: 2}} variant={'outlined'} color={'success'} disableRipple>
         Button
       </Button>
-      <Button sx={{mr: 2}}  variant={'outlined'} color={'success'} startIcon={<AddIcon/>}>
+      <Button sx={{mr: 2}}  variant={'outlined'} color={'success'} startIcon={<AddIcon/>} disableRipple>
         Button
       </Button>
-      <Button sx={{mr: 2}}  variant={'outlined'} color={'success'} endIcon={<ArrowForwardIosIcon/>}>
+      <Button sx={{mr: 2}}  variant={'outlined'} color={'success'} endIcon={<ArrowForwardIosIcon/>} disableRipple>
         Button
       </Button>
-      <Button sx={{mr: 2}}  variant={'outlined'} color={'success'} >{<ArrowForwardIosIcon/>}</Button>
+      <Button sx={{mr: 2}}  variant={'outlined'} color={'success'} disableRipple>{<ArrowForwardIosIcon/>}</Button>
     </Grid>
 
     <Grid sx={{mb: 2}}>
@@ -243,16 +259,16 @@ const All = () => (
     </Grid>
 
     <Grid sx={{mb: 2}}>
-      <Button sx={{mr: 2}} variant={'outlined'} color={'warning'} >
+      <Button sx={{mr: 2}} variant={'outlined'} color={'warning'} disableRipple>
         Button
       </Button>
-      <Button sx={{mr: 2}}  variant={'outlined'} color={'warning'} startIcon={<AddIcon/>}>
+      <Button sx={{mr: 2}}  variant={'outlined'} color={'warning'} startIcon={<AddIcon/>} disableRipple>
         Button
       </Button>
-      <Button sx={{mr: 2}}  variant={'outlined'} color={'warning'} endIcon={<ArrowForwardIosIcon/>}>
+      <Button sx={{mr: 2}}  variant={'outlined'} color={'warning'} endIcon={<ArrowForwardIosIcon/>} disableRipple>
         Button
       </Button>
-      <Button sx={{mr: 2}}  variant={'outlined'} color={'warning'} >{<ArrowForwardIosIcon/>}</Button>
+      <Button sx={{mr: 2}}  variant={'outlined'} color={'warning'} disableRipple>{<ArrowForwardIosIcon/>}</Button>
     </Grid>
 
     <Grid sx={{mb: 2}}>
