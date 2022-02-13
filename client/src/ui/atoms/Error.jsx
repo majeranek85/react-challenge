@@ -32,7 +32,7 @@ export const Error = ({ error }) => {
             >
               Error
             </Typography>
-            <img src={ErrorImg} alt='Error' />
+            <img src={ErrorImg} alt='' />
             <Typography
               sx={{
                 color: theme.palette.grey.lev4,

@@ -23,7 +23,7 @@ export const NoContent = () => {
       >
       NoContent
       </Typography>
-      <img src={NoContentImg} alt='No Content' />
+      <img src={NoContentImg} alt='' />
       <Typography
         sx={{
           color: theme.palette.grey.lev4,
