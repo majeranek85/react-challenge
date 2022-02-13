@@ -29,7 +29,7 @@ let theme = createTheme({
     success: {
       main: '#66bb6a',
       light: '#DBEBDB',
-      dark:'#00A980',
+      dark: '#00A980',
       contrastText: '#fff',
     },
     warning: {
@@ -152,42 +152,48 @@ theme = createTheme(theme, {
         },
       },
     },
+    MuiTouchRipple: {
+      styleOverrides: {
+        root: {
+          display: 'none',
+        },
+      },
+    },
     MuiSvgIcon: {
       styleOverrides: {
         root: {
           width: '12px',
           height: '12px',
-        }
-      }
+        },
+      },
     },
     MuiButton: {
       styleOverrides: {
         root: {
           boxShadow: 'none',
           textTransform: 'capitalize',
-          height: '34px',
-          minWidth: '34px',
+          minHeight: '22.7px',
+          minWidth: '22.7px',
           padding: '6px 12px',
           fontWeight: '500',
-          lineHeight: '22px',
           backgroundColor: theme.palette.secondary.main,
-          fontSize: '15px',
           '&.Mui-disabled': {
             backgroundColor: theme.palette.grey.lev1,
             color: theme.palette.grey.lev3,
-          },
-          '.MuiButton-startIcon': {
-            marginRight: '4px',
-          },
-          '.MuiButton-endIcon': {
-            marginRight: '4px',
           },
           ':hover': {
             boxShadow: 'none',
           },
           ':active': {
             boxShadow: 'none',
-          }
+          },
+        },
+        endIcon: {
+          marginLeft: '4px',
+          marginRight: '0',
+        },
+        startIcon: {
+          marginRight: '4px',
         },
         containedPrimary: {
           backgroundColor: theme.palette.primary.main,
@@ -195,7 +201,7 @@ theme = createTheme(theme, {
             backgroundColor: theme.palette.primary.dark,
           },
         },
-        containedError : {
+        containedError: {
           backgroundColor: theme.palette.error.light,
           color: theme.palette.error.main,
           ':hover': {
@@ -207,7 +213,7 @@ theme = createTheme(theme, {
             color: theme.palette.error.contrastText,
           },
         },
-        containedSuccess : {
+        containedSuccess: {
           backgroundColor: theme.palette.success.light,
           color: theme.palette.success.main,
           ':hover': {
@@ -219,7 +225,7 @@ theme = createTheme(theme, {
             color: theme.palette.success.contrastText,
           },
         },
-        containedWarning : {
+        containedWarning: {
           backgroundColor: theme.palette.warning.light,
           color: theme.palette.warning.dark,
           ':hover': {
@@ -229,7 +235,7 @@ theme = createTheme(theme, {
           ':active': {
             backgroundColor: theme.palette.warning.main,
             color: theme.palette.warning.contrastText,
-          }
+          },
         },
         outlinedPrimary: {
           border: 'none',
@@ -294,7 +300,7 @@ theme = createTheme(theme, {
             color: theme.palette.grey.lev3,
             borderColor: theme.palette.grey.lev1,
           },
-        }
+        },
       },
     },
   },
