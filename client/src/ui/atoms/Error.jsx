@@ -38,7 +38,7 @@ export const Error = ({ error }) => {
                 color: theme.palette.grey.lev4,
               }}
             >
-              Wystąpił nieoczekiwany błąd
+              {error}
             </Typography>
           </Box>
         ) //  TODO in TASK 1
