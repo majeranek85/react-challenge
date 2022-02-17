@@ -1,6 +1,5 @@
 import { Box, Typography } from '@mui/material';
-import NoContentImg from 'assets/no_content.png';
-import { theme } from '../../theme';
+import NoContentImage from 'assets/no_content.png';
 
 export const NoContent = () => {
   return (
@@ -12,24 +11,21 @@ export const NoContent = () => {
         flexDirection: 'column',
       }}
     >
+      <img
+        alt=""
+        width={202}
+        height={202}
+        src={NoContentImage}
+        loading="lazy"
+      />
       <Typography
+        textAlign={'center'}
+        mb={2}
         sx={{
-          fontSize: 64,
-          fontWeight: 700,
-          letterSpacing:'-0.01em',
-          lineHeight: '77px',
-          marginBottom: '60px',
+          color: '#33333350',
         }}
       >
-      NoContent
-      </Typography>
-      <img src={NoContentImg} alt='' />
-      <Typography
-        sx={{
-          color: theme.palette.grey.lev4,
-        }}
-      >
-      Brak danych do wyświetlenia
+        Brak danych do wyświetlenia
       </Typography>
     </Box>
   );
