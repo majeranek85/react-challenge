@@ -19,7 +19,7 @@ export const LedgerWidget = () => {
 
   return (
     <>
-      <AddNewLedgerRecord open={open} setOpen={setOpen} description={type} />
+      <AddNewLedgerRecord open={open} setOpen={setOpen} type={type} />
       <Card
         title={
           <ActionHeader

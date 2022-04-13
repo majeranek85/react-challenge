@@ -8,18 +8,16 @@ import { AddNewBudgetRecord } from 'ui/organisms/AddNewBudgetRecord.modal';
 export const BudgetPage = () => {
   const [open, setOpen] = useState(false);
 
-  const handleOpen = () => setOpen(true)
-
   return (
     <Page title="Budżet">
-      <AddNewBudgetRecord open={open} setOpen={setOpen} description='Zdefiniuj budżet'/>
+      <AddNewBudgetRecord open={open} setOpen={setOpen} title='Zdefiniuj budżet'/>
       <Card
         title={
           <ActionHeader
             variant={'h1'}
             title="Budżet"
             renderActions={() => (
-              <Button variant='contained' startIcon={<AddOutlinedIcon/>} onClick={handleOpen}>
+              <Button variant='contained' startIcon={<AddOutlinedIcon/>} onClick={setOpen}>
                 Zdefiniuj budżet
               </Button>
             )}

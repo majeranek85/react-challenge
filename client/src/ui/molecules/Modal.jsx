@@ -4,15 +4,7 @@ import { Modal, Card, CardHeader, CardContent, CardActions } from '@mui/material
 import { Button } from '../atoms/Button'
 
 
-export const ModalComponent = ({children, description, open, setOpen}) => {
-
-  const setTitle = () => {
-    if (description === 'INCOME') return 'Dodaj wpływ';
-    if (description === 'EXPENSE') return 'Dodaj wydatek';
-    else return description;
-  }
-
-  const title = setTitle();
+export const ModalComponent = ({children, title, open, setOpen}) => {
 
   const handleClose = () => {
     setOpen(false)

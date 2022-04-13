@@ -2,10 +2,10 @@ import React from 'react';
 
 import { ModalComponent } from 'ui/molecules/Modal';
 
-export const AddNewBudgetRecord = ({description, open, setOpen}) => {
+export const AddNewBudgetRecord = ({title, open, setOpen}) => {
   return(
     <ModalComponent
-      description={description}
+      title={title}
       open={open}
       setOpen={setOpen}
     />
